@@ -40,8 +40,8 @@ def about():
 def survey():
     """Renders the about page."""
     return render_template(
-        'about.html',
-        title='About',
+        'survey.html',
+        title='survey',
         year=datetime.now().year,
         message='Your application description page.'
     )

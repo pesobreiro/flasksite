@@ -42,6 +42,7 @@
     <Folder Include="flasksite\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="flasksite\templates\survey.html" />
     <Content Include="requirements.txt" />
     <Content Include="flasksite\static\content\bootstrap.css" />
     <Content Include="flasksite\static\content\bootstrap.min.css" />
