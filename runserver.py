@@ -1,5 +1,8 @@
 """
 This script runs the flasksite application using a development server.
+
+We are testing the creation of the forms
+
 """
 
 from os import environ
