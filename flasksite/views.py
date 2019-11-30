@@ -59,10 +59,10 @@ def survey():
         form=form
     )
 
-from flasksite.form import ContactForm
+from flasksite.form import SignupForm
 @app.route('/form',methods=('GET','POST'))
 def form():
-    form = ContactForm()
+    form = SignupForm()
     if form.validate_on_submit():
         return redirect(url_for('success'))
     return render_template('form.html',form=form ) 
