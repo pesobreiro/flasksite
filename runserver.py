@@ -5,6 +5,8 @@ This script runs the flasksite application using a development server.
 from os import environ
 from flasksite import app
 
+app.config['SECRET_KEY'] = 'you-will-never-guess'
+
 if __name__ == '__main__':
     HOST = environ.get('SERVER_HOST', 'localhost')
     try:
