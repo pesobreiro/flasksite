@@ -29,6 +29,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="flasksite\form.py" />
     <Compile Include="runserver.py" />
     <Compile Include="flasksite\__init__.py" />
     <Compile Include="flasksite\views.py" />
@@ -42,6 +43,8 @@
     <Folder Include="flasksite\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="flasksite\templates\form.html" />
+    <Content Include="flasksite\templates\survey - Copy.html" />
     <Content Include="flasksite\templates\survey.html" />
     <Content Include="requirements.txt" />
     <Content Include="flasksite\static\content\bootstrap.css" />

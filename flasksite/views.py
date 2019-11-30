@@ -5,6 +5,7 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template
 from flasksite import app
+#from flasksite import form
 
 @app.route('/')
 @app.route('/home')
@@ -57,3 +58,11 @@ def survey():
         message='Your application description page.',
         form=form
     )
+
+from flasksite.form import ContactForm
+@app.route('/form',methods=('GET','POST'))
+def form():
+    form = ContactForm()
+    if form.validate_on_submit():
+        return redirect(url_for('success'))
+    return render_template('form.html',form=form ) 
