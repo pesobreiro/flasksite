@@ -6,7 +6,7 @@
 
 <div class="formwrapper">
     <h2 class="title">Contact</h2>
-    <form method="post">
+    <form action="{{url_for('.form2')}}" method="post" >
         {{ form.csrf_token }}
         <div class="form-field">
             {{ form.email.label }} {{ form.email }}
