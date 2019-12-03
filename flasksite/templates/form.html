@@ -8,7 +8,7 @@ Estamos a testar um exemplo de um form
 
 <div class="formwrapper">
     <h2 class="title">Contact</h2>
-    <form method="post">
+    <form method="post" action="/form">
         {{ form.csrf_token }}
         <div class="form-field">
             {{ form.email.label }} {{ form.email }}
