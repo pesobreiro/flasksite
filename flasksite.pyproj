@@ -43,6 +43,9 @@
     <Folder Include="flasksite\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="database.db" />
+    <Content Include="flasksite\templates\form2.html" />
+    <Content Include="flasksite\templates\form - Copy.html" />
     <Content Include="flasksite\templates\form.html" />
     <Content Include="flasksite\templates\survey - Copy.html" />
     <Content Include="flasksite\templates\survey.html" />

@@ -3,8 +3,9 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from flasksite import app
+from flasksite.form import SignupForm
 #from flasksite import form
 
 @app.route('/')
@@ -14,7 +15,7 @@ def home():
     return render_template(
         'index.html',
         title='Home Page',
-        year=datetime.now().year,
+        year=datetime.now().year
     )
 
 @app.route('/contact')
@@ -47,22 +48,51 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
-@app.route('/survey')
+@app.route('/survey',methods=['GET','POST'])
 def survey():
     """Renders the about page."""
     form = LoginForm()
-
-    return render_template(
-        'survey.html',
-        title='survey',
-        message='Your application description page.',
-        form=form
+    if request.method == 'POST':
+        print('teste')
+        return redirect(url_for('home'))
+    return render_template('survey.html',title='survey',
+                           message='Your application description page.',form=form
     )
 
-from flasksite.form import SignupForm
-@app.route('/form',methods=('GET','POST'))
+#import sqlite3  
+#con = sqlite3.connect("database.db")  
+@app.route('/form',methods=['GET','POST'])
 def form():
     form = SignupForm()
-    if form.validate_on_submit():
-        return redirect(url_for('success'))
-    return render_template('form.html',form=form ) 
+    print('entrei')
+    if request.method == 'POST':
+        print('submit')
+        return redirect(url_for('form2'))
+    return render_template('form.html',form=form)
+
+@app.route('/form2',methods=['GET','POST'])
+def form2():
+    form = SignupForm()
+    print('entrei')
+    if request.method == 'POST':
+        print('submit')
+        return redirect(url_for('survey'))
+    return render_template('form2.html',form=form)
+
+
+'''
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm(request.form)
+    if request.method == 'POST' and form.validate():
+        user = User(form.username.data, form.email.data,
+                    form.password.data)
+        db_session.add(user)
+        flash('Thanks for registering')
+        return redirect(url_for('login'))
+    return render_template('register.html', form=form)
+'''
+@app.route('/success', methods=('GET', 'POST'))
+def success():
+    return render_template('success.html',template='success-template')
+

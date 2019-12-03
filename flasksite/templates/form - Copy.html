@@ -1,0 +1,78 @@
+
+
+{% block content %}
+
+<h1>Sign In</h1>
+
+Estamos a testar um exemplo de um form
+
+<div class="formwrapper">
+    <h2 class="title">Contact</h2>
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        <div class="form-field">
+            {{ form.email.label }} {{ form.email }}
+            {% if form.email.errors %}
+            <ul class="errors">
+                {% for error in form.email.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="form-field">
+            {{ form.password.label }} {{ form.password }}
+            {% if form.password.errors %}
+            <ul class="errors">
+                {% for error in form.password.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="form-field">
+            {{ form.confirmPassword.label }} {{ form.confirmPassword }}
+            {% if form.confirmPassword.errors %}
+            <ul class="errors">
+                {% for error in form.confirmPassword.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="form-field">
+            {{ form.title.label }} {{ form.title }}
+            <i class="fas fa-caret-down"></i>
+            {% if form.title.errors %}
+            <ul class="errors">
+                {% for error in form.title.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="form-field">
+            {{ form.website.label }} {{ form.website }}
+            {% if form.website.errors %}
+            <ul class="errors">
+                {% for error in form.website.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="form-field">
+            {{ form.birthday.label }} {{ form.birthday }}
+            {% if form.birthday.errors %}
+            <ul class="errors">
+                {% for error in form.birthday.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {{ form.recaptcha }}
+        {{ form.submit }}
+    </form>
+</div>
+{% endblock %}
