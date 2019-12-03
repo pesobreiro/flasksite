@@ -54,7 +54,7 @@ def survey():
     form = LoginForm()
     if request.method == 'POST':
         print('teste')
-        return redirect(url_for('home'))
+        return redirect(url_for('contact'))
     return render_template('survey.html',title='survey',
                            message='Your application description page.',form=form
     )
@@ -67,6 +67,8 @@ def form():
     print('entrei')
     if request.method == 'POST':
         print('submit')
+        print('email', form.email.data)
+        print('title:' ,form.title.data)
         return redirect(url_for('form2'))
     return render_template('form.html',form=form)
 
