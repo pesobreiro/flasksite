@@ -6,7 +6,7 @@
 
 Estamos a testar um exemplo de um form
 
-<form action="." method="post" novalidate>
+<form method="post" action="{{url_for('.survey')}}">
     {{ form.hidden_tag() }}
     <p>
         {{ form.username.label }}<br>
