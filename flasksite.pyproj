@@ -39,11 +39,14 @@
     <Folder Include="flasksite\static\" />
     <Folder Include="flasksite\static\content\" />
     <Folder Include="flasksite\static\fonts\" />
+    <Folder Include="flasksite\static\img\" />
     <Folder Include="flasksite\static\scripts\" />
     <Folder Include="flasksite\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="database.db" />
+    <Content Include="flasksite\static\img\claro.jpeg" />
+    <Content Include="flasksite\static\img\escuro.jpeg" />
     <Content Include="flasksite\templates\form2.html" />
     <Content Include="flasksite\templates\form - Copy.html" />
     <Content Include="flasksite\templates\form.html" />

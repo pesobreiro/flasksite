@@ -5,7 +5,27 @@
 <h1>Questionário</h1>
 O questionário tem a duração de 6 ecrãs. Depois de responderes ao ao questionário podes levantar um brinde mediante.
 <div class="formwrapper">
-    <h2 class="title">Contact</h2>
+    <table style="width:100%;">
+    <tr>
+        <td>
+            <img src="../static/img/escuro.jpeg" style="max-height: 100px; max-width: 100px;" />
+        </td>
+        <td>
+            <img src="../static/img/claro.jpeg" style="max-height: 100px; max-width: 100px;" />
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
     <form method="post" action="{{url_for('.form')}}">
         {{ form.csrf_token }}
         <div class="form-field">
