@@ -41,7 +41,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 more-itertools==7.2.0
 nbformat==4.4.0
-numpy==1.17.4
+numpy==1.22.0
 pandas==0.25.3
 pandas-datareader==0.8.1
 pip==19.3.1
